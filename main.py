@@ -29,7 +29,7 @@ def enviar_email(destinatario, assunto, corpo):
     servidor_smtp = 'smtp.sendgrid.net'
     porta_smtp = 587
     usuario_smtp = 'apikey'
-    senha_smtp = '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'
+    senha_smtp = 'Coloque a Key API da SendGrid aqui'
 
     # Iniciar a conexão com o servidor SMTP
     with smtplib.SMTP(host=servidor_smtp, port=porta_smtp) as servidor:
@@ -42,10 +42,10 @@ def enviar_email(destinatario, assunto, corpo):
         servidor.send_message(mensagem)
 
 # Configurando GSPREAD
-gc = gspread.service_account(filename='Amigosecreto-404413-ea513199ac5d.json')
+gc = gspread.service_account(filename='nome do arquivo json gerado no google cloud para acessar o sheets do google')
 
 # Caminho da Planilha
-planilha = gc.open('Amigo Secreto')
+planilha = gc.open('nome da planilha aqui')
 
 # Acessar a primeira guia da planilha
 guia = planilha.sheet1
